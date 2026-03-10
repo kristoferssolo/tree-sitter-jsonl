@@ -9,9 +9,13 @@
 
 module.exports = grammar({
   name: "jsonl",
+  extras: (_) => [],
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: $ => "hello"
-  }
+    document: ($) => repeat(choice($.record, $.empty_line)),
+    record: ($) => seq($.content, /\r?\n/),
+    content: (_) => /[^\r\n]+/,
+    empty_line: (_) => /[ \t]*\r?\n/,
+},
 });
