@@ -12,7 +12,9 @@
         "jsonl"
       ],
       "injection-regex": "^jsonl$",
-      "class-name": "TreeSitterJsonl"
+      "class-name": "TreeSitterJsonl",
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm"
     }
   ],
   "metadata": {
@@ -39,4 +41,3 @@
     "zig": false
   }
 }
-
